@@ -1,0 +1,30 @@
+$cor-de-fundo: #f7f7f7;
+$cor-primaria: #5e72e4;
+$cor-sombra: rgba(0, 0, 0, 0.1);
+
+.container-fluid{
+  position: fixed;
+  height: 100vh;
+}
+.login-container {
+  width: 100%;
+  max-width: 350px;
+  padding: 2rem;
+  margin: auto; // Ajuda no alinhamento vertical
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px $cor-sombra;
+  display: flex;
+  flex-direction: column;
+  // Alinha o conteúdo do .login-container ao centro
+  justify-content: center;
+
+  vertical-align: middle;
+}
+// Responsividade
+@media (max-width: 576px) {
+  .login-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
