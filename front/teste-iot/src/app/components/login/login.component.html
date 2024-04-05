@@ -1,0 +1,19 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-container">
+  <div class="text-center mb-4">
+    <img src="caminho-para-logo.png" alt="Logo da Empresa" class="login-logo">
+  </div>
+
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" id="username" formControlName="username" class="form-control" placeholder="Enter your username">
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password">
+  </div>
+
+  <div class="d-grid gap-2">
+    <button type="submit" class="btn btn-block btn-primary" [disabled]="loginForm.invalid">Login</button>
+  </div>
+</form>

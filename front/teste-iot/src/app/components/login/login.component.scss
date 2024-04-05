@@ -1,0 +1,72 @@
+// Definindo cores
+$cor-de-fundo: #f7f7f7;
+$cor-primaria: #5e72e4;
+$cor-sombra: rgba(0, 0, 0, 0.1);
+
+// Estilos globais
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: $cor-de-fundo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+// Contêiner do formulário de login
+.login-container {
+  width: 100%;
+  max-width: 350px;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px $cor-sombra;
+  display: flex;
+  flex-direction: column;
+  
+  .login-logo {
+    width: 120px;
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+
+  .form-label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: .5rem;
+  }
+
+  .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: .75rem 1rem;
+    margin-bottom: 1.5rem;
+    &:focus {
+      border-color: $cor-primaria;
+      box-shadow: 0 0 0 3px rgba(94, 114, 228, 0.25);
+    }
+  }
+
+  .btn-primary {
+    color: #fff;
+    background-color: $cor-primaria;
+    border-color: $cor-primaria;
+    padding: .75rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    &:hover {
+      background-color: darken($cor-primaria, 15%);
+      border-color: darken($cor-primaria, 15%);
+    }
+  }
+}
+
+// Responsividade
+@media (max-width: 576px) {
+  .login-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
