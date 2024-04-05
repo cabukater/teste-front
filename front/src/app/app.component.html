@@ -1,7 +1,4 @@
-<nav>
-  <a routerLink="/login">Login</a>
-  <a routerLink="/devices">Listagem de Dispositivos</a>
-  <a routerLink="/register-device">Registrar Dispositivo</a>
-</nav>
 
-<router-outlet></router-outlet> <!-- Onde os componentes da rota serão renderizados -->
+<app-menu *ngIf="(authService.isLoggedIn)"></app-menu>
+
+<router-outlet></router-outlet>

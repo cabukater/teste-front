@@ -5,26 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { DeviceRegisterComponent } from './components/device-register/device-register.component';
-import { DeviceListComponent } from './components/device-list/device-list.component';
 import { LoginComponent } from './components/login/login.component';
+import { MenuComponent } from './layout/menu/menu.component';
+import { DeviceModule } from './components/devices/device.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DeviceRegisterComponent,
-    DeviceListComponent,
-    LoginComponent
+    LoginComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
-
-
+    DeviceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

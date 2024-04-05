@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <table class="table table-responsive table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Fabricante</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let device of devices">
+        <td>{{ device.name }}</td>
+        <td>{{ device.description }}</td>
+        <td>{{ device.manufacturer }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #noDevices>
+    <div class="alert alert-info">Nenhum dispositivo encontrado.</div>
+  </ng-template>
+</div>
