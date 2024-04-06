@@ -26,7 +26,6 @@ export class DeviceListComponent implements OnInit {
     this.deviceService.getDevices().subscribe({
       next: (devices) => {
         this.devices = devices;
-        console.log(devices)
       },
       error: (error) => {
         console.error('Erro ao obter dispositivos', error);

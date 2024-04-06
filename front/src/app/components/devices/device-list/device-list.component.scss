@@ -1,0 +1,45 @@
+// styles.scss (ou qualquer outro nome que você preferir)
+
+// Importe o Bootstrap (se ainda não estiver importado)
+@import 'bootstrap';
+
+// Defina variáveis para cores personalizadas
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+
+// Estilize a tabela
+.table {
+  &-bordered {
+    border: 1px solid $secondary-color;
+  }
+
+  &-hover {
+    tbody tr:hover {
+      background-color: #f8f9fa;
+    }
+  }
+
+  &-thead {
+    &-light {
+      background-color: #f8f9fa;
+    }
+  }
+}
+
+// Personalize os estilos dos cabeçalhos da tabela
+th {
+  font-weight: bold;
+  text-align: left;
+}
+
+// Estilize as células da tabela
+td {
+  padding: 0.5rem;
+}
+
+// Adicione estilos à mensagem de nenhum dispositivo encontrado
+.alert-info {
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  color: #0c5460;
+}

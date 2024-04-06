@@ -1,0 +1,71 @@
+.navbar-custom {
+  background-color: #0056b3; // Um azul mais profundo para o fundo
+  padding: 0.3rem 1rem; // Menos padding para diminuir a altura
+  display: flex;
+  align-items: center; // Garantir alinhamento vertical
+  justify-content: space-between; // Espaçamento entre os elementos
+
+  .navbar-brand {
+    display: flex;
+    align-items: center; // Garantir alinhamento vertical
+    gap: 0.5rem; // Espaço entre logo e texto
+
+    .logo {
+      height: 40px; // Tamanho fixo para alinhar melhor com o texto
+    }
+  }
+
+  .user-logout-section {
+    display: flex;
+    align-items: center;
+
+    .username {
+      color: #ffffff;
+      font-size: 0.9rem;
+      margin-right: 0.5rem; // Espaço entre o nome de usuário e o botão sair
+    }
+
+    .logout-button {
+      background-color: #dc3545;
+      color: #ffffff;
+      border: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: #bb2d3b;
+      }
+
+      i {
+        margin-right: 0.3rem; // Espaço entre o ícone e o texto
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-custom {
+    .logo {
+      height: 35px; // Logo menor para dispositivos móveis
+    }
+    
+    .user-logout-section {
+      .username {
+        font-size: 0.8rem; // Fonte menor para dispositivos móveis
+      }
+
+      .logout-button {
+ 
+
+        span {
+          display: none; // Esconder texto "Sair"
+        }
+      }
+    }
+  }
+}

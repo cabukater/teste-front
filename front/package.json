@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently \"ng serve\" \"cd ../back && python3 app.py\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -18,6 +18,8 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "@fortawesome/angular-fontawesome": "^0.14.1",
+    "@fortawesome/fontawesome-free": "^6.5.2",
     "bootstrap": "^5.3.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

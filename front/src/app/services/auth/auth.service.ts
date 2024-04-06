@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +18,9 @@ export class AuthService {
 
   login(username: string, password: string): Observable<any> {
     return this.http.post<any>(this.authUrl, { username, password }).pipe(
-      map(res => {
-        localStorage.setItem('token', res.token); // {2}
-        this.loggedIn.next(true); // {3}
-        return res;
+      map((res: { token: string; username: string }) => {
+        localStorage.setItem('token', res.token); // Salvar token
+        localStorage.setItem('username', res.username); // Salvar username
       }),
       catchError(error => {
         console.error('Erro no serviço de autenticação', error); // {4}
@@ -32,6 +31,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token'); // {5}
+    localStorage.removeItem('usernmae'); // {5}
     this.loggedIn.next(false); // {6}
   }
 
