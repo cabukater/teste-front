@@ -1,20 +1,33 @@
-<!-- src/app/device-register/device-register.component.html -->
-<div class="container mt-5">
-  <form [formGroup]="deviceForm" (ngSubmit)="addDevice()" class="row g-3">
-    <div class="col-md-3">
-      <label for="name" class="form-label">Nome:</label>
-      <input id="name" formControlName="name" type="text" class="form-control">
-    </div>
-    <div class="col-md-3">
-      <label for="description" class="form-label">Descrição:</label>
-      <input id="description" formControlName="description" type="text" class="form-control">
-    </div>
-    <div class="col-md-3">
-      <label for="manufacturer" class="form-label">Fabricante:</label>
-      <input id="manufacturer" formControlName="manufacturer" type="text" class="form-control">
-    </div>
-    <div class="col-md-3 d-flex align-items-end">
-      <button type="submit" class="btn btn-primary w-100">Registrar Dispositivo</button>
-    </div>
-  </form>
+<div class="card shadow-sm p-4 mt-5">
+  <div class="card-body">
+    <h3 class="title b-4">{{changeText}} um novo Dispositivo</h3>
+    <hr class="mb-2">
+
+    <form [formGroup]="deviceForm" (ngSubmit)="submitForm()" class="row g-3 align-items-end needs-validation mt-3" novalidate>
+      <div class="col-md-3">
+        <label for="name" class="form-label">Nome:</label>
+        <input id="name" formControlName="name" type="text" class="form-control" required>
+        <div class="invalid-feedback">
+          Por favor, insira o nome do dispositivo.
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="manufacturer" class="form-label">Fabricante:</label>
+        <input id="manufacturer" formControlName="manufacturer" type="text" class="form-control" required>
+        <div class="invalid-feedback">
+          Por favor, insira o fabricante do dispositivo.
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="description" class="form-label">Descrição:</label>
+        <input id="description" formControlName="description" type="text" class="form-control" required>
+        <div class="invalid-feedback">
+          Por favor, insira uma descrição.
+        </div>
+      </div>
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-primary">{{changeText}} Dispositivo</button>
+      </div>
+    </form>
+  </div>
 </div>

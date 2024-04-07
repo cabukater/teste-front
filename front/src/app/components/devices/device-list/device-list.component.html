@@ -1,21 +1,36 @@
-<div class="container mt-4">
-  <table class="table table-responsive table-striped">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Descrição</th>
-        <th>Fabricante</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let device of devices">
-        <td>{{ device.name }}</td>
-        <td>{{ device.description }}</td>
-        <td>{{ device.manufacturer }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container-fluid shadow-sm mt-5">
+
+  <h3 class="title">Lista de dispositivos cadastrados</h3>
+  <hr class="mb-4">
+
+    <table class="table table-hover shadow-sm">
+      <thead class="bg-light text-primary">
+        <tr>
+          <th scope="col" class="col-1"></th>
+          <th scope="col" class="col-lg-3 col">Nome</th>
+          <th scope="col" class="col-lg-3 col ">Fabricante</th>
+          <th scope="col" class="col-3">Descrição</th>
+          <th scope="col" class="col-lg-2 col text-right">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let device of devices">
+          <td><i class="fa-solid fa-microchip"></i></td>
+          <td>{{ device.name }}</td>
+          <td>{{ device.manufacturer }}</td>
+          <td  class="col-sm-3">{{ device.description }}</td>
+          <td class="text-right col-5 col-md-3">
+            <button class="btn btn-outline-info btn-sm" (click)="editDevice(device)">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn btn-outline-danger btn-sm" (click)="deleteDevice(device)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <ng-template #noDevices>
-    <div class="alert alert-info">Nenhum dispositivo encontrado.</div>
+    <div class="alert alert-info text-center">Nenhum dispositivo encontrado. Adicione um novo device acima!</div>
   </ng-template>
-</div>

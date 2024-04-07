@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DeviceRegisterComponent } from './device-register/device-register.component';
 import { DeviceListComponent } from './device-list/device-list.component';
@@ -16,6 +16,7 @@ import { DevicesComponent } from './devices.component';
     BrowserModule,
     ReactiveFormsModule,
   ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
 
 })
 export class DeviceModule { }

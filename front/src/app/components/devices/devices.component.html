@@ -1,2 +1,12 @@
-<app-device-register></app-device-register>
-<app-device-list></app-device-list>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <app-device-register [device]="currentDeviceToEdit" (updateSuccess)="refreshList()"></app-device-register>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <app-device-list (deviceToEdit)="onEditDevice($event)"  [refresList]="refresh"></app-device-list>
+        </div>
+    </div>
+</div>

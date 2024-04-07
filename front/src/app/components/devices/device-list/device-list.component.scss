@@ -1,45 +1,148 @@
-// styles.scss (ou qualquer outro nome que você preferir)
+// Cores
+$primary-color: #3498db; // Azul mais claro
+$danger-color: #e74c3c; // Vermelho mais suave
+$light-gray: #ecf0f1; // Cor de fundo clara
+$dark-gray: #95a5a6; // Cor de texto mais suave
+$action-color: #bdc3c7; // Cinza para ações não críticas
 
-// Importe o Bootstrap (se ainda não estiver importado)
-@import 'bootstrap';
+body {
+  background-color: $light-gray;
+  color: $dark-gray;
+  font-family: 'Open Sans', sans-serif;
+}
 
-// Defina variáveis para cores personalizadas
-$primary-color: #007bff;
-$secondary-color: #6c757d;
+.card {
+  background: #ffffff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-// Estilize a tabela
 .table {
-  &-bordered {
-    border: 1px solid $secondary-color;
-  }
-
-  &-hover {
-    tbody tr:hover {
-      background-color: #f8f9fa;
+  thead {
+    th {
+      color: $primary-color;
+      font-size: 0.95rem;
+      font-weight: 400;
+      border-bottom: 2px solid $primary-color;
+      background-color: $light-gray;
+      padding: 1rem;
     }
   }
 
-  &-thead {
-    &-light {
-      background-color: #f8f9fa;
+  tbody {
+    tr {
+      td {
+        vertical-align: middle; // Alinha o texto verticalmente
+        font-size: 0.9rem;
+        padding: 1rem;
+        border-bottom: 1px solid $light-gray;
+
+  
+      }
+    }
+  }
+
+  &-hover tbody tr:hover {
+    background-color: $action-color; // Um cinza suave ao passar o mouse
+  }
+
+.btn {
+    margin: 0 5px;
+    padding: 0.375rem 0.75rem;
+    border-width: 2px;
+    
+    &-outline-info {
+      color: $primary-color;
+      border-color: $primary-color;
+      
+      &:hover {
+        color: #fff;
+        background-color: $primary-color;
+      }
+    }
+    
+    &-outline-danger {
+      color: $danger-color;
+      border-color: $danger-color;
+      
+      &:hover {
+        color: #fff;
+        background-color: $danger-color;
+      }
+    }
+    
+    i {
+      margin: 0;
     }
   }
 }
 
-// Personalize os estilos dos cabeçalhos da tabela
-th {
-  font-weight: bold;
-  text-align: left;
-}
-
-// Estilize as células da tabela
-td {
-  padding: 0.5rem;
-}
-
-// Adicione estilos à mensagem de nenhum dispositivo encontrado
 .alert-info {
-  background-color: #d1ecf1;
-  border-color: #bee5eb;
-  color: #0c5460;
+  background-color: $light-gray;
+  color: $dark-gray;
+  border: none;
+  border-left: 4px solid $primary-color;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.night-mode {
+  background-color: #222222;
+  color: #ffffff;
+
+.card,
+.table,
+.alert-info {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+.table thead th {
+    background-color: #444444;
+  }
+
+.btn-outline-info {
+    color: #ffffff;
+    border-color: #ffffff;
+
+    &:hover {
+      color: #222222;
+      background-color: #ffffff;
+    }
+  }
+
+.btn-outline-danger {
+    color: #ffffff;
+    border-color: #ffffff;
+
+    &:hover {
+      color: #222222;
+      background-color: #ffffff;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+.table {
+    thead {
+      th {
+        display: none;
+     
+          &:first-child {
+            display: none;
+          }}
+      
+    }
+
+    tbody {
+      tr {
+        td {
+          &:first-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
