@@ -23,11 +23,8 @@ export class DeviceService {
   }
 
   updateDevice(id: string, device: Device): Observable<Device> {
-    return this.http.put<Device>(`${this.apiUrl}/${id}`, device).pipe(
-      catchError(this.errorHandler.handleError)
-    );
-  }
-  
+    return this.http.put<Device>(`${this.apiUrl}/${id}`, device);
+}
   deleteDevice(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }

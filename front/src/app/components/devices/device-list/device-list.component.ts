@@ -68,6 +68,8 @@ export class DeviceListComponent implements OnInit {
           next: () => {
             this.getDevices();
             Swal.fire('Deletado!', 'O dispositivo foi deletado.', 'success');
+            this.updateDevice.notifyDeviceUpdate();
+
           },
           error: (error) => {
             Swal.fire('Erro!', 'Não foi possível deletar o dispositivo.', 'error');

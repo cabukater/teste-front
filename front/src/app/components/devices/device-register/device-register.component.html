@@ -3,7 +3,7 @@
     <h3 class="title b-4">{{changeText}} um novo Dispositivo</h3>
     <hr class="mb-2">
 
-    <form [formGroup]="deviceForm" (ngSubmit)="submitForm()" class="row g-3 align-items-end needs-validation mt-3" novalidate>
+    <form [formGroup]="deviceForm" (ngSubmit)="submitForm()" class="row g-3 align-items-end needs-validation mt-3" novalidate  #formElement>
       <div class="col-md-3">
         <label for="name" class="form-label">Nome:</label>
         <input id="name" formControlName="name" type="text" class="form-control" required>
@@ -11,7 +11,7 @@
           Por favor, insira o nome do dispositivo.
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2">
         <label for="manufacturer" class="form-label">Fabricante:</label>
         <input id="manufacturer" formControlName="manufacturer" type="text" class="form-control" required>
         <div class="invalid-feedback">
@@ -25,8 +25,11 @@
           Por favor, insira uma descrição.
         </div>
       </div>
-      <div class="col-md-3">
-        <button type="submit" class="btn btn-primary">{{changeText}} Dispositivo</button>
+      <div class="col-md-2 d-grid gap-2 x-auto">
+        <button type="submit" class="btn btn-primary pull-right btn-block">{{changeText}} Dispositivo</button>
+      </div>
+      <div class="col-md-2 d-grid gap-2 x-auto">
+        <button type="button" class="btn btn-outline-danger btn-block"  *ngIf="cancelShow" (click)="cancel()">Cancelar</button>
       </div>
     </form>
   </div>

@@ -2,3 +2,19 @@
     background-color: #fbfbfb;
     border: 1px solid #e4e1e1;
 }
+
+
+/* Em device-register.component.scss */
+.form-highlight {
+    animation: highlightAnimation 2s ease-out;
+  }
+  
+  @keyframes highlightAnimation {
+    0% {
+      background-color: yellow;
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+  
