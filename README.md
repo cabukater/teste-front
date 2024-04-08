@@ -33,7 +33,7 @@ git clone https://github.com/cabukater/teste-front
 
 ### Passo 2: Instalação das Dependências
 
-Navegue até o diretório do projeto e instale as dependências do Node.js:
+Navegue até o diretório do projeto e instale as dependências do Angular:
 
 ```bash
 cd teste-iot
