@@ -27,7 +27,7 @@ Para rodar este projeto, você precisará ter instalado em sua máquina:
 Primeiro, clone o repositório para a sua máquina local:
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/cabukater/teste-front.git
 ```
 
 ### Passo 2: Instalação das Dependências
@@ -35,7 +35,7 @@ git clone <URL_DO_REPOSITORIO>
 Navegue até o diretório do projeto e instale as dependências do Node.js:
 
 ```bash
-cd teste-iot
+cd teste-iot/front
 npm install
 ```
 
