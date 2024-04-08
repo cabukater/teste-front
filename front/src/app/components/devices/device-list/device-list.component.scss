@@ -1,9 +1,8 @@
-// Cores
-$primary-color: #3498db; // Azul mais claro
-$danger-color: #e74c3c; // Vermelho mais suave
-$light-gray: #ecf0f1; // Cor de fundo clara
-$dark-gray: #95a5a6; // Cor de texto mais suave
-$action-color: #bdc3c7; // Cinza para ações não críticas
+$primary-color: #3498db;
+$danger-color: #e74c3c;
+$light-gray: #ecf0f1;
+$dark-gray: #95a5a6;
+$action-color: #bdc3c7;
 
 body {
   background-color: $light-gray;
@@ -33,45 +32,45 @@ body {
   tbody {
     tr {
       td {
-        vertical-align: middle; // Alinha o texto verticalmente
+        vertical-align: middle;
         font-size: 0.9rem;
         padding: 1rem;
         border-bottom: 1px solid $light-gray;
 
-  
+
       }
     }
   }
 
   &-hover tbody tr:hover {
-    background-color: $action-color; // Um cinza suave ao passar o mouse
+    background-color: $action-color;
   }
 
-.btn {
+  .btn {
     margin: 0 5px;
     padding: 0.375rem 0.75rem;
     border-width: 2px;
-    
+
     &-outline-info {
       color: $primary-color;
       border-color: $primary-color;
-      
+
       &:hover {
         color: #fff;
         background-color: $primary-color;
       }
     }
-    
+
     &-outline-danger {
       color: $danger-color;
       border-color: $danger-color;
-      
+
       &:hover {
         color: #fff;
         background-color: $danger-color;
       }
     }
-    
+
     i {
       margin: 0;
     }
@@ -91,18 +90,18 @@ body {
   background-color: #222222;
   color: #ffffff;
 
-.card,
-.table,
-.alert-info {
+  .card,
+  .table,
+  .alert-info {
     background-color: #333333;
     color: #ffffff;
   }
 
-.table thead th {
+  .table thead th {
     background-color: #444444;
   }
 
-.btn-outline-info {
+  .btn-outline-info {
     color: #ffffff;
     border-color: #ffffff;
 
@@ -112,7 +111,7 @@ body {
     }
   }
 
-.btn-outline-danger {
+  .btn-outline-danger {
     color: #ffffff;
     border-color: #ffffff;
 
@@ -124,15 +123,16 @@ body {
 }
 
 @media (max-width: 768px) {
-.table {
+  .table {
     thead {
       th {
         display: none;
-     
-          &:first-child {
-            display: none;
-          }}
-      
+
+        &:first-child {
+          display: none;
+        }
+      }
+
     }
 
     tbody {

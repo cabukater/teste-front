@@ -7,7 +7,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private authUrl = 'http://localhost:5000/api/login'; // Substitua pela URL correta da sua API de autenticação
+  private authUrl = 'http://localhost:5000/api/login'; 
   private loggedIn = new BehaviorSubject<boolean>(this.hasToken());
 
   get isLoggedIn(): boolean {
@@ -19,11 +19,11 @@ export class AuthService {
   login(username: string, password: string): Observable<any> {
     return this.http.post<any>(this.authUrl, { username, password }).pipe(
       map((res: { token: string; username: string }) => {
-        localStorage.setItem('token', res.token); // Salvar token
-        localStorage.setItem('username', res.username); // Salvar username
+        localStorage.setItem('token', res.token); 
+        localStorage.setItem('username', res.username); 
       }),
       catchError(error => {
-        console.error('Erro no serviço de autenticação', error); // {4}
+        console.error('Erro no serviço de autenticação', error)
         return throwError(error);
       })
     );

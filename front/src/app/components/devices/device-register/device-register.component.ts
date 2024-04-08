@@ -21,9 +21,9 @@ export class DeviceRegisterComponent implements OnInit, OnChanges {
 
   constructor(
     private fb: FormBuilder,
-   private updateDevice: UpdateDeviceService , 
+    private updateDevice: UpdateDeviceService,
     private deviceService: DeviceService,
-    private renderer: Renderer2 
+    private renderer: Renderer2
   ) {
     this.deviceForm = this.fb.group({
       id: [''],
@@ -38,8 +38,8 @@ export class DeviceRegisterComponent implements OnInit, OnChanges {
       this.cancelShow = true;
       this.highlightForm();
 
-    }else{
-      this.cancelShow= false
+    } else {
+      this.cancelShow = false
     }
   }
 
@@ -49,7 +49,7 @@ export class DeviceRegisterComponent implements OnInit, OnChanges {
     if (changes['device'] && this.device) {
       this.changeText = 'Editar';
       this.deviceForm.patchValue(this.device);
-      this.deviceForm.controls['id'].setValue(this.device.id); // Assegure-se de que o id é setado
+      this.deviceForm.controls['id'].setValue(this.device.id);
       this.cancelShow = true;
       setTimeout(() => this.formElement.nativeElement.scrollIntoView({ behavior: 'smooth' }), 0);
 
@@ -61,25 +61,23 @@ export class DeviceRegisterComponent implements OnInit, OnChanges {
       const deviceData = this.deviceForm.value;
 
       if (this.device && this.device.id) {
-        // Atualiza o dispositivo existente
         this.deviceService.updateDevice(deviceData.id, deviceData).subscribe({
           next: () => {
             Swal.fire('Atualizado', 'Dispositivo atualizado com sucesso!', 'success');
             this.deviceForm.reset();
             this.updateDevice.notifyDeviceUpdate();
 
-            this.device = null; // Resetar o dispositivo sendo editado
+            this.device = null;
           },
           error: () => Swal.fire('Erro', 'Não foi possível atualizar o dispositivo.', 'error')
         });
       } else {
-        // Adiciona um novo dispositivo
         this.deviceService.addDevice(deviceData).subscribe({
           next: () => {
             Swal.fire('Registrado', 'Dispositivo registrado com sucesso!', 'success');
             this.deviceForm.reset();
             this.changeText = 'Registrar';
-            this.cancelShow= false
+            this.cancelShow = false
             this.updateDevice.notifyDeviceUpdate();
 
           },
@@ -91,18 +89,16 @@ export class DeviceRegisterComponent implements OnInit, OnChanges {
     }
   }
 
-
   highlightForm(): void {
     const form = this.formElement.nativeElement;
     this.renderer.addClass(form, 'form-highlight');
-    // Opcional: remover a classe após a animação
     setTimeout(() => this.renderer.removeClass(form, 'form-highlight'), 2000);
   }
 
-  cancel(){
+  cancel() {
     this.deviceForm.reset();
     this.changeText = 'Registrar';
-    this.cancelShow= false
+    this.cancelShow = false
   }
 }
 

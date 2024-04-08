@@ -2,8 +2,8 @@
   <div class="card-body">
     <h3 class="title b-4">{{changeText}} um novo Dispositivo</h3>
     <hr class="mb-2">
-
-    <form [formGroup]="deviceForm" (ngSubmit)="submitForm()" class="row g-3 align-items-end needs-validation mt-3" novalidate  #formElement>
+    <form [formGroup]="deviceForm" (ngSubmit)="submitForm()" class="row g-3 align-items-end needs-validation mt-3"
+      novalidate #formElement>
       <div class="col-md-3">
         <label for="name" class="form-label">Nome:</label>
         <input id="name" formControlName="name" type="text" class="form-control" required>
@@ -29,7 +29,8 @@
         <button type="submit" class="btn btn-primary pull-right btn-block">{{changeText}} Dispositivo</button>
       </div>
       <div class="col-md-2 d-grid gap-2 x-auto">
-        <button type="button" class="btn btn-outline-danger btn-block"  *ngIf="cancelShow" (click)="cancel()">Cancelar</button>
+        <button type="button" class="btn btn-outline-danger btn-block" *ngIf="cancelShow"
+          (click)="cancel()">Cancelar</button>
       </div>
     </form>
   </div>

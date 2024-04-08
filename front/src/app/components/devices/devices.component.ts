@@ -9,7 +9,6 @@ import { DeviceService } from 'src/app/services/device/device.service';
 })
 export class DevicesComponent {
   currentDeviceToEdit!: Device ;
-  refresh: boolean = false;
 
   constructor(private deviceService: DeviceService) {}
   onEditDevice(device: Device): void {
@@ -17,8 +16,5 @@ export class DevicesComponent {
     
   }
 
-  refreshList(): void {
-    this.refresh = !this.refresh; // Alterna o valor para garantir a detecção de mudança
-  }
 
 }

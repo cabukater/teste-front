@@ -24,7 +24,7 @@ class DeviceList(Resource):
     
     def post(self):
         device = request.json
-        device['id'] = str(uuid.uuid4())  # Gera um ID único para o dispositivo
+        device['id'] = str(uuid.uuid4())  
         devices.append(device)
         return {"message": "Dispositivo cadastrado com sucesso", "device": device}, 201
 
@@ -39,7 +39,7 @@ class Device(Resource):
         updated_device = request.json
         for i, device in enumerate(devices):
             if device["id"] == id:
-                updated_device["id"] = id  # Mantém o ID inalterado
+                updated_device["id"] = id  
                 devices[i] = updated_device
                 return {"message": "Dispositivo atualizado com sucesso"}, 200
         return {"message": "Dispositivo não encontrado", "error": "Not Found"}, 404

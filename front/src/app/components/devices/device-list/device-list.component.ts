@@ -5,8 +5,6 @@ import Swal from 'sweetalert2';
 import { Subscription } from 'rxjs';
 import { UpdateDeviceService } from 'src/app/services/device/update-device.service';
 
-
-
 @Component({
   selector: 'app-device-list',
   templateUrl: './device-list.component.html',
@@ -16,11 +14,10 @@ export class DeviceListComponent implements OnInit {
   devices: Device[] = [];
   @Output() deviceToEdit = new EventEmitter<Device>();
   selectedDevice: Device | null = null;
-
   private updateSubscription!: Subscription;
 
   constructor(
-    private updateDevice :  UpdateDeviceService,
+    private updateDevice: UpdateDeviceService,
     private deviceService: DeviceService) { }
 
   ngOnInit(): void {
@@ -29,7 +26,6 @@ export class DeviceListComponent implements OnInit {
       this.getDevices();
     });
   }
-
 
   ngOnDestroy(): void {
     if (this.updateSubscription) {

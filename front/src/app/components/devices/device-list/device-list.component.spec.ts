@@ -6,8 +6,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 describe('SeuComponenteOuServico', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule], // Adiciona o HttpClientTestingModule aqui
-      providers: [AuthService, HttpClient] // Providencia o AuthService
+      imports: [HttpClientTestingModule],
+      providers: [AuthService, HttpClient] 
     }).compileComponents();
   });
 
@@ -15,6 +15,4 @@ describe('SeuComponenteOuServico', () => {
     const service: AuthService = TestBed.inject(AuthService);
     expect(service).toBeTruthy();
   });
-
-  // Adicione mais testes conforme necessário
 });
