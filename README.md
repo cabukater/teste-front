@@ -30,7 +30,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico para a vaga de D
 ## Testes Unitários
 
 - **Cobertura Inicial:** Foram realizados testes unitários abrangendo funcionalidades principais.
-- **Futuras Melhorias:** Reconhecemos a importância de expandir a cobertura de testes para garantir maior confiabilidade.
+- **Futuras Melhorias:** Reconheço a importância de expandir a cobertura de testes para garantir maior confiabilidade.
 
 ### Tecnologias Utilizadas
 
